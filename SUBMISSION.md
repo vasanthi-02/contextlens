@@ -1,19 +1,10 @@
-# Superbrain Assignment — Submission
-
 **Name:** Vasanthi Vallepu
-**GitHub repo:** [fill in after you push]
-**Deployed app:** [fill in after Vercel deploy]
+**GitHub repo:** [https://github.com/vasanthi-02/contextlens.git]
+**Deployed app:** [https://contextlens-m4ejh2jdk-vasanthi1.vercel.app/]
 
-> A note before you read this: this is a strong first draft to save you time,
-> not something to paste in untouched. Read it, argue with parts of it, swap
-> in your own words where it doesn't sound like you — the brief explicitly
-> asks for your own voice, not a polished essay. Also: Part 3 below is
-> written from researching Superbrain's site and docs. You should still spend
-> 30-60 min actually using the product (they say it's free in beta) before
-> finalizing that section — firsthand friction beats researched friction
-> every time, and it'll show.
 
----
+
+
 
 ## 1. What I built and why
 
@@ -163,10 +154,11 @@ spent real time in Superbrain specifically, that'll be more convincing than mine
   sessions. For an assignment meant to demonstrate reasoning about context
   and agents, persistence doesn't add signal, so I left it out rather than
   spend a day on schema design.
-- **Why Claude for the model calls** — it's Anthropic's own model, it's
-  what the assignment context is built around, and the API is simple to
-  call directly with `fetch` (no SDK dependency to manage under time
-  pressure).
+- - **Why Groq (Llama) for the model calls** — it has a genuinely free API
+  tier with no card required, which mattered given the timeline, and it's
+  fast enough that the two-call agent loop (plan, then answer) still feels
+  responsive. The API wrapper (`lib/claude.ts`) is a thin, swappable layer —
+  pointing it at a different provider is a one-file change.
 - **Why the stats panel is the centerpiece of the UI, not an afterthought**
   — the assignment is evaluating product thinking, not just code. A demo
   that just answers questions proves I can call an LLM. A demo that also
